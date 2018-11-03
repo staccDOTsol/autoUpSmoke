@@ -1,0 +1,34 @@
+<head>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src="https://tradeitforweed.io/steem.min.js"></script>
+</head>
+This site allows you to autosmoke any of your following's posts!<br><br>
+<form action='/' method='post'>Enter Smoke username <input type='text' name='username'></input> and your wif <input type='text' name='wif'></input> and weight (10000 is 100%) <input type='text' name='weight'></input><input type='submit'></input></form>
+
+<script>
+
+function ajax_get(url, callback) {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            try {
+                var data = JSON.parse(xmlhttp.responseText);
+            } catch(err) {
+                console.log(err.message + " in " + xmlhttp.responseText);
+                return;
+            }
+            callback(data);
+        }
+    };
+ 
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
+}
+var fees = 0.95;
+function doSubmit(){
+}
+</script>
+<br>
+<br>
+<div name='div'></div>
+<script>
